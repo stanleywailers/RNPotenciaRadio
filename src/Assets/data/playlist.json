@@ -1,0 +1,9 @@
+[
+    {
+      "url": "http://max.miradio.in:8300/stream?type=.mp3",
+      "title": "Longing",
+      "artist": "David Chavez",
+      "artwork": "https://react-native-track-player.js.org/example/Longing.jpeg",
+      "duration": 143
+    }
+]

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { View } from 'react-native'
+import { AppState, View } from 'react-native'
 import SplashScreen from 'react-native-splash-screen'
 import { HomeScreen } from './src/Screens/HomeScreen';
 
@@ -7,7 +7,7 @@ import { HomeScreen } from './src/Screens/HomeScreen';
 
 const App = () => {
 
-
+  
 
   return (
     <View  style={{ flex:1}}>
@@ -15,5 +15,6 @@ const App = () => {
     </View>
   )
 }
+
 
 export default App;
