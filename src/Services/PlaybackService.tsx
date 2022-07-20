@@ -1,5 +1,5 @@
-import TrackPlayer, {Event, State} from 'react-native-track-player';
-import type {ProgressUpdateEvent} from 'react-native-track-player';
+import TrackPlayer, { Event, State } from 'react-native-track-player';
+import type { ProgressUpdateEvent } from 'react-native-track-player';
 
 let wasPausedByDuck = false;
 
@@ -14,18 +14,12 @@ export async function PlaybackService() {
 
   TrackPlayer.addEventListener(Event.RemoteStop, () => {
     console.log('stop')
-     //TrackPlayer.stop();
-     TrackPlayer.destroy();
+    //TrackPlayer.stop();
+    TrackPlayer.destroy();
   });
-  TrackPlayer.addEventListener(Event.PlaybackError, () => {
-    console.log('error')
-    TrackPlayer.stop();
-  });
-
- 
 
   TrackPlayer.addEventListener(Event.RemoteNext, () => {
-    
+
     TrackPlayer.skipToNext();
   });
 
@@ -44,7 +38,7 @@ export async function PlaybackService() {
         TrackPlayer.pause();
       } else {
         if (wasPausedByDuck === true) {
-          TrackPlayer.play(); 
+          TrackPlayer.play();
           wasPausedByDuck = false;
         }
       }
