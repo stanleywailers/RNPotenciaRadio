@@ -1,4 +1,7 @@
 {
   "name": "RNPotenciaRadio",
-  "displayName": "RNPotenciaRadio"
+  "displayName": "RNPotenciaRadio",
+  "react-native-google-mobile-ads": {
+    "android_app_id": "ca-app-pub-8582719280960685~5235635722"
+  }
 }
