@@ -1,17 +1,14 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { View } from 'react-native'
-import SplashScreen from 'react-native-splash-screen'
 import { HomeScreen } from './src/Screens/HomeScreen';
-
-
+// import { AdsScreen } from './src/Screens/AdsScreen';
 
 const App = () => {
 
-
-
   return (
-    <View  style={{ flex:1}}>
-     <HomeScreen></HomeScreen> 
+    <View style={{ flex: 1 }}>
+      <HomeScreen />
+      {/* <AdsScreen /> */}
     </View>
   )
 }
