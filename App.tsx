@@ -5,6 +5,8 @@ import { HomeScreen } from './src/Screens/HomeScreen';
 
 const App = () => {
 
+  
+
   return (
     <View style={{ flex: 1 }}>
       <HomeScreen />
@@ -12,5 +14,6 @@ const App = () => {
     </View>
   )
 }
+
 
 export default App;

@@ -1,16 +1,55 @@
-import React, { useEffect } from 'react'
-import { Image, StyleSheet, Text, View } from 'react-native'
+import React, { useEffect, useState } from 'react'
+import { AppState, Image, StyleSheet, Text, View } from 'react-native'
 import SplashScreen from 'react-native-splash-screen'
 import LinearGradient from 'react-native-linear-gradient';
+import { PlayPauseButton } from '../Components/PlayPauseButton';
+import { SetupServicePlayer } from '../Services/SetupServicePlayer';
+import { QueueInitalTracksService } from '../Services/QueueInitalTracksService';
+import TrackPlayer from 'react-native-track-player';
+import { useOnTogglePlayback } from '../Hooks/useOnTogglePlayback';
 
 
  
  
 export const HomeScreen = () => {
-
+  const [aState, setAppState] = useState(AppState.currentState);
+  const [isPlayerReady, setIsPlayerReady] = useState<boolean>(false);
     useEffect(() => {
         SplashScreen.hide();
       } )
+
+      useEffect(() => {
+        async function run() {
+          const isSetup = await SetupServicePlayer();
+          setIsPlayerReady(isSetup);
+
+          if(isSetup){
+           TrackPlayer.play()
+          }
+    
+          const queue = await TrackPlayer.getQueue();
+          if (isSetup && queue.length <= 0) {
+            await QueueInitalTracksService();
+          }
+        }
+    
+        run();
+
+        
+      }, []);
+
+      useEffect(() => {
+        const appStateListener = AppState.addEventListener(
+          'change',
+          nextAppState => {
+            console.log('Next AppState is: ', nextAppState);
+            setAppState(nextAppState);
+          },
+        );
+        return () => {
+          appStateListener?.remove();
+        };
+      }, []);
       
   return (
     <View style={{ flex:1}}>
@@ -20,6 +59,7 @@ export const HomeScreen = () => {
         <View style={{ bottom:30,
         justifyContent:'center', alignItems:'center'}} >
         <Image   source={require('../Assets/logo_cuadrado.png')} style={{ width: 300, height: 250, resizeMode:'contain' }} />
+      
         </View>
      
        
@@ -27,7 +67,7 @@ export const HomeScreen = () => {
        
         <View style={{backgroundColor:'#462945',bottom:0, position:'absolute', height:100 , width:'100%', 
         justifyContent:'center', alignItems:'center'}}>
-            <Image   source={require('../Assets/ic_play.png')} style={{ width: 50, height: 50 }}/>
+          <PlayPauseButton/>
           </View>
           
           </LinearGradient>
