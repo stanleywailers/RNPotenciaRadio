@@ -1,13 +1,13 @@
-import React, {useEffect, useState} from 'react';
-import {AppState, Image, StyleSheet, Text, Touchable, TouchableOpacity, View} from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { AppState, Image, StyleSheet, Text, Linking, View } from 'react-native';
 import SplashScreen from 'react-native-splash-screen';
 import LinearGradient from 'react-native-linear-gradient';
-import {PlayPauseButton} from '../Components/PlayPauseButton';
-import {SetupServicePlayer} from '../Services/SetupServicePlayer';
-import {QueueInitalTracksService} from '../Services/QueueInitalTracksService';
+import { PlayPauseButton } from '../Components/PlayPauseButton';
+import { SetupServicePlayer } from '../Services/SetupServicePlayer';
+import { QueueInitalTracksService } from '../Services/QueueInitalTracksService';
 import TrackPlayer from 'react-native-track-player';
-import {useOnTogglePlayback} from '../Hooks/useOnTogglePlayback';
-import {AdEventType, BannerAd, BannerAdSize, InterstitialAd, TestIds} from 'react-native-google-mobile-ads';
+import { useOnTogglePlayback } from '../Hooks/useOnTogglePlayback';
+import { AdEventType, BannerAd, BannerAdSize, InterstitialAd, TestIds } from 'react-native-google-mobile-ads';
 
 const adUnitIdBanner = __DEV__
   ? TestIds.BANNER
@@ -16,9 +16,9 @@ const adUnitId = __DEV__
   ? TestIds.INTERSTITIAL
   : 'ca-app-pub-8582719280960685/2007740063';
 
-  const interstitial = InterstitialAd.createForAdRequest(adUnitId, {
-    requestNonPersonalizedAdsOnly: true,
-    keywords: ['fashion', 'clothing'],
+const interstitial = InterstitialAd.createForAdRequest(adUnitId, {
+  requestNonPersonalizedAdsOnly: true,
+  keywords: ['fashion', 'clothing'],
 });
 
 export const HomeScreen = () => {
@@ -63,33 +63,33 @@ export const HomeScreen = () => {
   useEffect(() => {
 
     const unsubscribe = interstitial.addAdEventsListener(({ type }) => {
-        type === AdEventType.LOADED && setLoaded(true);
-        type === AdEventType.CLOSED && loadAd();
+      type === AdEventType.LOADED && setLoaded(true);
+      type === AdEventType.CLOSED && loadAd();
     })
 
     loadAd();
 
     return unsubscribe;
-}, []);
+  }, []);
 
-const loadAd = () => {
+  const loadAd = () => {
     setLoaded(false);
     interstitial.load()
-}
+  }
 
-const showAds = () => {
+  const showAds = () => {
     if (!loaded) {
-        console.log('no loaded ad [null]')
-        return null
+      console.log('no loaded ad [null]')
+      return null
     }
     interstitial.show();
-}
+  }
 
   return (
-    <View style={{flex: 1}}>
+    <View style={{ flex: 1 }}>
       <LinearGradient
         colors={['#feb308', '#ee1d71']}
-        style={{...StyleSheet.absoluteFillObject, justifyContent: 'center'}}>
+        style={{ ...StyleSheet.absoluteFillObject, justifyContent: 'center' }}>
         <View
           style={{
             bottom: 30,
@@ -98,11 +98,11 @@ const showAds = () => {
           }}>
           <Image
             source={require('../Assets/logo_cuadrado.png')}
-            style={{width: 300, height: 250, resizeMode: 'contain'}}
+            style={{ width: 300, height: 250, resizeMode: 'contain' }}
           />
         </View>
 
-        <View style={{position: 'absolute' , bottom:100}}>
+        <View style={{ position: 'absolute', bottom: 100 }}>
           <BannerAd unitId={adUnitIdBanner} size={BannerAdSize.FULL_BANNER} />
         </View>
         <View
@@ -115,12 +115,26 @@ const showAds = () => {
             justifyContent: 'center',
             alignItems: 'center',
           }}>
-             <PlayPauseButton OnPressAd={() => showAds()}/>
-        
-            
-         
+
+          <PlayPauseButton OnPressAd={() => showAds()} />
+
+          <View
+            style={{
+              position: 'absolute',
+              bottom: 0,
+              right: 0,
+              padding: 5
+            }}
+          >
+            <Text
+              style={{ color: '#feb308' }}
+              onPress={() => Linking.openURL('https://zebapp.blogspot.com/p/politica-de-privacidad.html?m=1')}
+            >
+              Politica de privacidad
+            </Text>
+          </View>
         </View>
-     
+
       </LinearGradient>
     </View>
   );
