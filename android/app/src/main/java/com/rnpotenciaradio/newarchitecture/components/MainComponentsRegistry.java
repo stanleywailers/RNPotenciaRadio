@@ -1,4 +1,4 @@
-package com.rnpotenciaradio.newarchitecture.components;
+package com.devstroyers.Potencia.Radio.newarchitecture.components;
 
 import com.facebook.jni.HybridData;
 import com.facebook.proguard.annotations.DoNotStrip;

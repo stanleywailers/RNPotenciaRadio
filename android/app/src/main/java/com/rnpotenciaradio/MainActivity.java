@@ -1,4 +1,4 @@
-package com.rnpotenciaradio;
+package com.devstroyers.Potencia.Radio;
 
 import com.facebook.react.ReactActivity;
 import android.os.Bundle; // required for onCreate parameter
