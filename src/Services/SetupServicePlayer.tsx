@@ -1,4 +1,4 @@
-import TrackPlayer, {Capability} from 'react-native-track-player';
+import TrackPlayer, { Capability } from 'react-native-track-player';
 
 export const SetupServicePlayer = async (): Promise<boolean> => {
   let isSetup = false;
@@ -7,22 +7,22 @@ export const SetupServicePlayer = async (): Promise<boolean> => {
     await TrackPlayer.getCurrentTrack();
     isSetup = true;
   } catch {
-   await TrackPlayer.setupPlayer();
-   await  TrackPlayer.updateOptions({
-      stopWithApp: false,
+    await TrackPlayer.setupPlayer();
+    await TrackPlayer.updateOptions({
+      stopWithApp: true,
       capabilities: [
         Capability.Play,
         Capability.Pause,
         Capability.SkipToNext,
         Capability.SkipToPrevious,
         Capability.Stop,
-        
+
       ],
       compactCapabilities: [
         Capability.Play,
         Capability.Pause,
         Capability.SkipToNext,
-        
+
       ],
       progressUpdateEventInterval: 2,
     });
