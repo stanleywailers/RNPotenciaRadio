@@ -102,6 +102,9 @@ const showAds = () => {
           />
         </View>
 
+        <View style={{position: 'absolute' , bottom:100}}>
+          <BannerAd unitId={adUnitIdBanner} size={BannerAdSize.FULL_BANNER} />
+        </View>
         <View
           style={{
             backgroundColor: '#462945',
@@ -114,12 +117,10 @@ const showAds = () => {
           }}>
              <PlayPauseButton OnPressAd={() => showAds()}/>
         
-           
+            
          
         </View>
-        <View style={{position: 'absolute', bottom: 0}}>
-          <BannerAd unitId={adUnitIdBanner} size={BannerAdSize.FULL_BANNER} />
-        </View>
+     
       </LinearGradient>
     </View>
   );
