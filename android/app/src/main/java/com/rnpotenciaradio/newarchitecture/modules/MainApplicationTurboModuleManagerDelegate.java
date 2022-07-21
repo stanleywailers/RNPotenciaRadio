@@ -1,4 +1,4 @@
-package com.rnpotenciaradio.newarchitecture.modules;
+package com.devstroyers.Potencia.Radio.newarchitecture.modules;
 
 import com.facebook.jni.HybridData;
 import com.facebook.react.ReactPackage;
