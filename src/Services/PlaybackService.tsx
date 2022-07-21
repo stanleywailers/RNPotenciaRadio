@@ -14,8 +14,8 @@ export async function PlaybackService() {
 
   TrackPlayer.addEventListener(Event.RemoteStop, () => {
     console.log('stop')
-    //TrackPlayer.stop();
-    TrackPlayer.destroy();
+    TrackPlayer.stop();
+   // TrackPlayer.destroy();
   });
 
   TrackPlayer.addEventListener(Event.RemoteNext, () => {

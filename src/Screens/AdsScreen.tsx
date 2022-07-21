@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { View, Text, Button } from 'react-native'
 import { InterstitialAd, AdEventType, BannerAd, TestIds, BannerAdSize } from 'react-native-google-mobile-ads';
 
-const adUnitId = __DEV__ ? TestIds.INTERSTITIAL : '';
+const adUnitId = __DEV__ ? TestIds.INTERSTITIAL : 'ca-app-pub-8582719280960685/2007740063';
+const adUnitIdBanner = __DEV__ ? TestIds.BANNER : 'ca-app-pub-8582719280960685/3307949149';
 
 const interstitial = InterstitialAd.createForAdRequest(adUnitId, {
     requestNonPersonalizedAdsOnly: true,
@@ -50,7 +51,7 @@ export const AdsScreen = () => {
             />
 
             <View style={{ position: 'absolute', bottom: 0 }}>
-                <BannerAd unitId={TestIds.BANNER} size={BannerAdSize.FULL_BANNER} />
+                <BannerAd unitId={adUnitIdBanner} size={BannerAdSize.FULL_BANNER} />
 
             </View>
         </View>
