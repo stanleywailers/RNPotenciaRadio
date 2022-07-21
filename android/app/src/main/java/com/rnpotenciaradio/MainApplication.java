@@ -1,4 +1,4 @@
-package com.rnpotenciaradio;
+package com.rnpotenciaradio; 
 import org.devio.rn.splashscreen.SplashScreenReactPackage;
 import android.app.Application;
 import android.content.Context;
