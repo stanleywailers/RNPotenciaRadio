@@ -128,7 +128,7 @@ export const HomeScreen = () => {
           >
             <Text
               style={{ color: '#feb308' }}
-              onPress={() => Linking.openURL('https://zebapp.blogspot.com/p/politica-de-privacidad.html?m=1')}
+              onPress={() => Linking.openURL('https://radiopotenciaapp.blogspot.com/p/privacy-policy-updated-at-2029-07-21.html')}
             >
               Politica de privacidad
             </Text>
