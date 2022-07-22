@@ -23,10 +23,12 @@ const interstitial = InterstitialAd.createForAdRequest(adUnitId, {
   keywords: ['fashion', 'clothing'],
 });
 
+
 export const HomeScreen = () => {
   const [loaded, setLoaded] = useState(true);
   const [aState, setAppState] = useState(AppState.currentState);
   const [isPlayerReady, setIsPlayerReady] = useState<boolean>(false);
+
   useEffect(() => {
     SplashScreen.hide();
   });
@@ -48,6 +50,7 @@ export const HomeScreen = () => {
 
     run();
   }, []);
+
 
   useEffect(() => {
     const appStateListener = AppState.addEventListener(

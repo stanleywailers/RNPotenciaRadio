@@ -12,6 +12,7 @@
   "dependencies": {
     "@react-native-firebase/analytics": "^15.2.0",
     "@react-native-firebase/app": "^15.2.0",
+    "@react-native-firebase/messaging": "^15.2.0",
     "react": "18.0.0",
     "react-native": "0.69.1",
     "react-native-google-mobile-ads": "^7.0.1",
