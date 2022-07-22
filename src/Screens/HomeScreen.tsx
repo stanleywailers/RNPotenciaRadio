@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { AppState, Image, StyleSheet, Text, Linking, View } from 'react-native';
 import SplashScreen from 'react-native-splash-screen';
 import LinearGradient from 'react-native-linear-gradient';
+import analytics from '@react-native-firebase/analytics';
+
 import { PlayPauseButton } from '../Components/PlayPauseButton';
 import { SetupServicePlayer } from '../Services/SetupServicePlayer';
 import { QueueInitalTracksService } from '../Services/QueueInitalTracksService';
@@ -116,7 +118,16 @@ export const HomeScreen = () => {
             alignItems: 'center',
           }}>
 
-          <PlayPauseButton OnPressAd={() => showAds()} />
+          {/* <PlayPauseButton OnPressAd={() => showAds()} /> */}
+          <PlayPauseButton
+            OnPressAd={async () => {
+              await analytics().logEvent('playRadio', {
+                id: Date.now.toString(),
+                description: 'play/pause Radio'
+              })
+              showAds()
+            }}
+          />
 
           <View
             style={{
