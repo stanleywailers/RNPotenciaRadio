@@ -10,6 +10,7 @@ import { QueueInitalTracksService } from '../Services/QueueInitalTracksService';
 import TrackPlayer from 'react-native-track-player';
 import { useOnTogglePlayback } from '../Hooks/useOnTogglePlayback';
 import { AdEventType, BannerAd, BannerAdSize, InterstitialAd, TestIds } from 'react-native-google-mobile-ads';
+import messaging from '@react-native-firebase/messaging';
 
 const adUnitIdBanner = __DEV__
   ? TestIds.BANNER
@@ -23,10 +24,12 @@ const interstitial = InterstitialAd.createForAdRequest(adUnitId, {
   keywords: ['fashion', 'clothing'],
 });
 
+
 export const HomeScreen = () => {
   const [loaded, setLoaded] = useState(true);
   const [aState, setAppState] = useState(AppState.currentState);
   const [isPlayerReady, setIsPlayerReady] = useState<boolean>(false);
+
   useEffect(() => {
     SplashScreen.hide();
   });
@@ -48,6 +51,18 @@ export const HomeScreen = () => {
 
     run();
   }, []);
+
+  // Muestra el FCM token en consola. 
+  useEffect(() => {
+    const checkToken = async () => {
+      const fcmToken = await messaging().getToken();
+      if (fcmToken) {
+        console.log(fcmToken);
+      }
+    }
+
+    checkToken();
+  }, [])
 
   useEffect(() => {
     const appStateListener = AppState.addEventListener(
