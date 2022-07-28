@@ -109,7 +109,7 @@ export const HomeScreen = () => {
         style={{ ...StyleSheet.absoluteFillObject, justifyContent: 'center' }}>
         <View
           style={{
-            bottom: 30,
+            bottom: 50,
             justifyContent: 'center',
             alignItems: 'center',
           }}>

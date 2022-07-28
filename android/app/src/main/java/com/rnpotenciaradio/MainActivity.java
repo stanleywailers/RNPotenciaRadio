@@ -1,5 +1,5 @@
 package com.devstroyers.Potencia.Radio;
-
+import android.os.Bundle;
 import com.facebook.react.ReactActivity;
 import android.os.Bundle; // required for onCreate parameter
 // react-native-splash-screen >= 0.3.1
@@ -57,4 +57,6 @@ public class MainActivity extends ReactActivity {
     }
   
   }
+
+  
 }

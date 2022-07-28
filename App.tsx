@@ -1,14 +1,16 @@
+import 'react-native-gesture-handler';
 import React from 'react'
-import { View } from 'react-native'
-import { HomeScreen } from './src/Screens/HomeScreen';
+import { NavigationContainer } from '@react-navigation/native';
+import { CustomDrawer } from './src/Navigator/CustomDrawer';
 // import { AdsScreen } from './src/Screens/AdsScreen';
+
+
 
 const App = () => {
   return (
-    <View style={{ flex: 1 }}>
-      <HomeScreen />
-      {/* <AdsScreen /> */}
-    </View>
+    <NavigationContainer> 
+    <CustomDrawer/>
+    </NavigationContainer>
   )
 }
 
