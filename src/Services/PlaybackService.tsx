@@ -27,6 +27,10 @@ export async function PlaybackService() {
     TrackPlayer.skipToPrevious();
   });
 
+  TrackPlayer.addEventListener(Event.PlaybackError, ({code,message }) => {
+   
+  });
+
   TrackPlayer.addEventListener(Event.RemoteDuck, async e => {
     console.log('duck')
     if (e.permanent === true) {
