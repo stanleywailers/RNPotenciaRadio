@@ -17,7 +17,7 @@ export const ButtonSetting = ({
 }: Props) => {
   return (
     <TouchableOpacity
-      activeOpacity={0.8}
+      activeOpacity={0.9}
       onPress={() => Linking.openURL(urlNavigation)}>
       <View
         style={{
