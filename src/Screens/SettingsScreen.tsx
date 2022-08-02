@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import {Text, View} from 'react-native';
 import {BannerAd, BannerAdSize, TestIds} from 'react-native-google-mobile-ads';
 import {getVersion} from 'react-native-device-info';

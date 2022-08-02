@@ -13,7 +13,7 @@ import {DrawerMenuCell} from '../Components/DrawerMenuCell';
 import {NewsScreen} from '../Screens/NewsScreen';
 import {SettingsScreen} from '../Screens/SettingsScreen';
 import {DrawerActions, useNavigation} from '@react-navigation/native';
-import { LoopGameScreen } from '../Screens/LoopGameScreen';
+import {LoopGameScreen} from '../Screens/LoopGameScreen';
 
 const Drawer = createDrawerNavigator();
 
@@ -41,7 +41,7 @@ export const CustomDrawer = ({}) => {
         component={HomeScreen}
       />
       <Drawer.Screen
-        options={() => ({title: 'Juego'})}
+        options={() => ({title: 'Snake Game'})}
         name="LoopGameScreen"
         component={LoopGameScreen}
       />
@@ -66,8 +66,8 @@ const SideMenu = ({navigation}: DrawerContentComponentProps) => {
           screenName="HomeScreen"
         />
         <DrawerMenuCell
-          iconName="newspaper-sharp"
-          name="Juego"
+          iconName="game-controller-outline"
+          name="Jugar"
           navProps={navigation}
           screenName="LoopGameScreen"
         />
