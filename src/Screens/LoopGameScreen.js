@@ -66,6 +66,7 @@ export const LoopGameScreen = () => {
             height: BoardSize,
             flex: null,
             backgroundColor: "#FFF",
+            marginTop: 10,
           }}
           entities={{
             head: {
@@ -151,7 +152,7 @@ export const LoopGameScreen = () => {
         </View>
 
         {
-          !isGameRunning ? (
+          !isGameRunning && (
             <View
               style={{
                 width: '100%',
@@ -182,8 +183,6 @@ export const LoopGameScreen = () => {
                 </Text>
               </TouchableOpacity>
             </View>
-          ) : (
-            <View style={{ height: 120, width: '100%' }}></View>
           )
         }
         <View style={{ position: 'absolute', bottom: 0, width: '100%' }}>
