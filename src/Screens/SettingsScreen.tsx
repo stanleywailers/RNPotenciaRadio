@@ -36,8 +36,11 @@ export const SettingsScreen = () => {
         textButton="Políticas de Privacidad"
         urlNavigation="https://radiopotenciaapp.blogspot.com/p/privacy-policy-updated-at-2029-07-21.html"
       />
-      <View style={{position: 'absolute', bottom: 25}}>
-        <BannerAd unitId={adUnitIdBanner} size={BannerAdSize.FULL_BANNER} />
+      <View style={{position: 'absolute', bottom: 25, width: '100%'}}>
+        <BannerAd
+          unitId={adUnitIdBanner}
+          size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
+        />
       </View>
       <View
         style={{

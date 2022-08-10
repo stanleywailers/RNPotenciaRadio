@@ -181,8 +181,8 @@ export const LoopGameScreen = () => {
             </TouchableOpacity>
           </View>
         ) : (
-          <View style={{ position: 'absolute', bottom: 0 }}>
-            <BannerAd unitId={adUnitIdBanner} size={BannerAdSize.FULL_BANNER} />
+          <View style={{ position: 'absolute', bottom: 0, width: '100%' }}>
+            <BannerAd unitId={adUnitIdBanner} size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER} />
           </View>
         )
       }

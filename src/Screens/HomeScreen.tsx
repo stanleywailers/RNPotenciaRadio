@@ -123,8 +123,16 @@ export const HomeScreen = () => {
           />
         </View>
 
-        <View style={{position: 'absolute', bottom: 100}}>
-          <BannerAd unitId={adUnitIdBanner} size={BannerAdSize.FULL_BANNER} />
+        <View
+          style={{
+            position: 'absolute',
+            bottom: 100,
+            width: '100%',
+          }}>
+          <BannerAd
+            unitId={adUnitIdBanner}
+            size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
+          />
         </View>
         <View
           style={{
