@@ -2,6 +2,7 @@ import 'react-native-gesture-handler';
 import React from 'react'
 import { NavigationContainer } from '@react-navigation/native';
 import { CustomDrawer } from './src/Navigator/CustomDrawer';
+import { LoopGameScreen } from './src/Screens/LoopGameScreen';
 // import { AdsScreen } from './src/Screens/AdsScreen';
 
 
@@ -11,6 +12,7 @@ const App = () => {
     <NavigationContainer> 
     <CustomDrawer/>
     </NavigationContainer>
+  
   )
 }
 

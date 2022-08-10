@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import {Text, View} from 'react-native';
 import {BannerAd, BannerAdSize, TestIds} from 'react-native-google-mobile-ads';
 import {getVersion} from 'react-native-device-info';
@@ -36,8 +36,11 @@ export const SettingsScreen = () => {
         textButton="Políticas de Privacidad"
         urlNavigation="https://radiopotenciaapp.blogspot.com/p/privacy-policy-updated-at-2029-07-21.html"
       />
-      <View style={{position: 'absolute', bottom: 25}}>
-        <BannerAd unitId={adUnitIdBanner} size={BannerAdSize.FULL_BANNER} />
+      <View style={{position: 'absolute', bottom: 25, width: '100%'}}>
+        <BannerAd
+          unitId={adUnitIdBanner}
+          size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
+        />
       </View>
       <View
         style={{
