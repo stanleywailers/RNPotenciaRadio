@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react'
 import { GameEngine } from "react-native-game-engine";
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View, ScrollView } from 'react-native';
 import { BannerAd, BannerAdSize, TestIds } from 'react-native-google-mobile-ads';
 import Icon from 'react-native-vector-icons/Ionicons';
 import Constants from '../Resources/Constants';
@@ -56,137 +56,141 @@ export const LoopGameScreen = () => {
   };
 
   return (
-    <View style={styles.canvas}>
-      <GameEngine
-        ref={engine}
-        style={{
-          width: BoardSize,
-          height: BoardSize,
-          flex: null,
-          backgroundColor: "#FFF",
-        }}
-        entities={{
-          head: {
-            position: [0, 0],
-            size: Constants.CELL_SIZE,
-            updateFrequency: 10,
-            nextMove: 10,
-            xspeed: 0,
-            yspeed: 0,
-            renderer: <Head />,
-          },
-          food: {
-            position: [
-              randomPositions(0, Constants.GRID_SIZE - 1),
-              randomPositions(0, Constants.GRID_SIZE - 1),
-            ],
-            size: Constants.CELL_SIZE,
-            renderer: <Food />,
-          },
-          tail: {
-            size: Constants.CELL_SIZE,
-            elements: [],
-            renderer: <Tail />,
-          },
-        }}
-        systems={[GameLoop]}
-        running={isGameRunning}
-        onEvent={(e) => {
-          switch (e) {
-            case "game-over":
-              alert("Game over!");
-              setIsGameRunning(false);
-              return;
-          }
-        }}
-      />
-      <View style={styles.controlContainer}>
+    <ScrollView style={{ flex: 1 }} contentContainerStyle={{ flexGrow: 1 }}>
+      <View style={styles.canvas}>
 
-        <View style={styles.controllerRow}>
-          <TouchableOpacity
-            activeOpacity={0.8}
-            onPress={() => engine.current.dispatch("move-up")}
-          >
-            <View style={styles.controlBtn}>
-              <Icon name="arrow-up-outline" size={50} color="#000" />
-            </View>
-          </TouchableOpacity>
-        </View>
+        <GameEngine
+          ref={engine}
+          style={{
+            width: BoardSize,
+            height: BoardSize,
+            flex: null,
+            backgroundColor: "#FFF",
+          }}
+          entities={{
+            head: {
+              position: [0, 0],
+              size: Constants.CELL_SIZE,
+              updateFrequency: 10,
+              nextMove: 10,
+              xspeed: 0,
+              yspeed: 0,
+              renderer: <Head />,
+            },
+            food: {
+              position: [
+                randomPositions(0, Constants.GRID_SIZE - 1),
+                randomPositions(0, Constants.GRID_SIZE - 1),
+              ],
+              size: Constants.CELL_SIZE,
+              renderer: <Food />,
+            },
+            tail: {
+              size: Constants.CELL_SIZE,
+              elements: [],
+              renderer: <Tail />,
+            },
+          }}
+          systems={[GameLoop]}
+          running={isGameRunning}
+          onEvent={(e) => {
+            switch (e) {
+              case "game-over":
+                alert("Game over!");
+                setIsGameRunning(false);
+                return;
+            }
+          }}
+        />
+        <View style={styles.controlContainer}>
 
-        <View style={styles.controllerRow}>
-          <TouchableOpacity
-            activeOpacity={0.8}
-            onPress={() => engine.current.dispatch("move-left")}
-          >
-            <View style={styles.controlBtn}>
-              <Icon name="arrow-back-outline" size={50} color="#000" />
-            </View>
-          </TouchableOpacity>
-
-          <View style={[styles.controlBtn, { backgroundColor: null }]} />
-
-          <TouchableOpacity
-            activeOpacity={0.8}
-            onPress={() => engine.current.dispatch("move-right")}
-          >
-            <View style={styles.controlBtn} >
-              <Icon name="arrow-forward-outline" size={50} color="#000" />
-            </View>
-          </TouchableOpacity>
-        </View>
-
-        <View style={styles.controllerRow}>
-          <TouchableOpacity
-            activeOpacity={0.8}
-            onPress={() => engine.current.dispatch("move-down")}
-          >
-            <View style={styles.controlBtn}>
-              <Icon name="arrow-down-outline" size={50} color="#000" />
-            </View>
-          </TouchableOpacity>
-        </View>
-
-      </View>
-
-      {
-        !isGameRunning ? (
-          <View
-            style={{
-              width: '100%',
-            }}
-          >
+          <View style={styles.controllerRow}>
             <TouchableOpacity
-              activeOpacity={0.9}
-              onPress={resetGame}
-              style={{
-                backgroundColor: "#feb308",
-                marginHorizontal: 40,
-                borderRadius: 10,
-                justifyContent: 'center',
-                // padding: 10,
-                height: 50
-
-              }}
+              activeOpacity={0.8}
+              onPress={() => engine.current.dispatch("move-up")}
             >
-              <Text
-                style={{
-                  color: "#FFF",
-                  fontSize: 22,
-                  fontWeight: 'bold',
-                  textAlign: 'center',
-                }}
-              >
-                Start New Game
-              </Text>
+              <View style={styles.controlBtn}>
+                <Icon name="arrow-up-outline" size={50} color="#000" />
+              </View>
             </TouchableOpacity>
           </View>
-        ) : (
-          <View style={{ position: 'absolute', bottom: 0, width: '100%' }}>
-            <BannerAd unitId={adUnitIdBanner} size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER} />
+
+          <View style={styles.controllerRow}>
+            <TouchableOpacity
+              activeOpacity={0.8}
+              onPress={() => engine.current.dispatch("move-left")}
+            >
+              <View style={styles.controlBtn}>
+                <Icon name="arrow-back-outline" size={50} color="#000" />
+              </View>
+            </TouchableOpacity>
+
+            <View style={[styles.controlBtn, { backgroundColor: null }]} />
+
+            <TouchableOpacity
+              activeOpacity={0.8}
+              onPress={() => engine.current.dispatch("move-right")}
+            >
+              <View style={styles.controlBtn} >
+                <Icon name="arrow-forward-outline" size={50} color="#000" />
+              </View>
+            </TouchableOpacity>
           </View>
-        )
-      }
-    </View>
+
+          <View style={styles.controllerRow}>
+            <TouchableOpacity
+              activeOpacity={0.8}
+              onPress={() => engine.current.dispatch("move-down")}
+            >
+              <View style={styles.controlBtn}>
+                <Icon name="arrow-down-outline" size={50} color="#000" />
+              </View>
+            </TouchableOpacity>
+          </View>
+
+        </View>
+
+        {
+          !isGameRunning ? (
+            <View
+              style={{
+                width: '100%',
+                height: 120
+              }}
+            >
+              <TouchableOpacity
+                activeOpacity={0.9}
+                onPress={resetGame}
+                style={{
+                  backgroundColor: "#feb308",
+                  marginHorizontal: 40,
+                  borderRadius: 10,
+                  justifyContent: 'center',
+                  height: 50
+
+                }}
+              >
+                <Text
+                  style={{
+                    color: "#FFF",
+                    fontSize: 22,
+                    fontWeight: 'bold',
+                    textAlign: 'center',
+                  }}
+                >
+                  Start New Game
+                </Text>
+              </TouchableOpacity>
+            </View>
+          ) : (
+            <View style={{ height: 120, width: '100%' }}></View>
+          )
+        }
+        <View style={{ position: 'absolute', bottom: 0, width: '100%' }}>
+          <BannerAd unitId={adUnitIdBanner} size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER} />
+        </View>
+      </View>
+    </ScrollView>
   );
 }
 
