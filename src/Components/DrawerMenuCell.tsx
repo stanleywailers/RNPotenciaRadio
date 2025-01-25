@@ -59,10 +59,7 @@ export const DrawerMenuCell = ({
     <TouchableOpacity
       style={{paddingVertical: 20}}
       onPress={() => {
-        if (
-          screenName === 'SettingsScreen' ||
-          screenName === 'LoopGameScreen'
-        ) {
+        if (screenName === 'LoopGameScreen') {
           showAds();
         }
         navProps.navigate(screenName);
