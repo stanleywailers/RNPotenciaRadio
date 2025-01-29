@@ -4,16 +4,16 @@
 import messaging from '@react-native-firebase/messaging';
 
 // handle for message when the app is background
-messaging().setBackgroundMessageHandler(async (remoteMessage) => {
-    console.log('Message handled in the background!', remoteMessage);
+messaging().setBackgroundMessageHandler(async remoteMessage => {
+  console.log('Message handled in the background!', remoteMessage);
 });
 
-import { AppRegistry } from 'react-native';
+import {AppRegistry} from 'react-native';
 import TrackPlayer from 'react-native-track-player';
 import App from './App';
-import { name as appName } from './app.json';
-import { PlaybackService } from './src/Services/PlaybackService';
+import {name as appName} from './app.json';
+// import {PlaybackService} from './src/Services/PlaybackService';
 
 AppRegistry.registerComponent(appName, () => App);
-TrackPlayer.registerPlaybackService(() => PlaybackService);
-
+TrackPlayer.registerPlaybackService(() => require('./service'));
+// TrackPlayer.registerPlaybackService(() => PlaybackService);
