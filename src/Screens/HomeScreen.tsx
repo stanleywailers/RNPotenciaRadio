@@ -25,21 +25,18 @@ export const HomeScreen = () => {
   });
 
   useEffect(() => {
-    async function run() {
-      const isSetup = await SetupServicePlayer();
-      setIsPlayerReady(isSetup);
-
-      if (isSetup) {
-        TrackPlayer.play();
-      }
-
-      const queue = await TrackPlayer.getQueue();
-      if (isSetup && queue.length <= 0) {
-        await QueueInitalTracksService();
-      }
-    }
-
-    run();
+    // async function run() {
+    //   const isSetup = await SetupServicePlayer();
+    //   setIsPlayerReady(isSetup);
+    //   if (isSetup) {
+    //     TrackPlayer.play();
+    //   }
+    //   const queue = await TrackPlayer.getQueue();
+    //   if (isSetup && queue.length <= 0) {
+    //     await QueueInitalTracksService();
+    //   }
+    // }
+    // run();
   }, []);
 
   // Muestra el FCM token en consola.
