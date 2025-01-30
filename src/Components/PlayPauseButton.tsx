@@ -23,9 +23,6 @@ export const PlayPauseButton = ({
   const state = usePlaybackState();
   // const isPlaying = state === State.Playing;
   const isLoading = state === State.Connecting || state === State.Buffering;
-  // const playbackState = usePlaybackState();
-
-  // const [isPlaying, setIsPlaying] = useState(false);
 
   // const onTogglePlayback = useOnTogglePlayback();
 
@@ -61,7 +58,7 @@ export const PlayPauseButton = ({
             ? require('../Assets/ic_pause.png')
             : require('../Assets/ic_play.png')
         }
-        style={{width: 70, height: 70, resizeMode: 'contain'}}
+        style={styles.imageContainer}
       />
     </TouchableOpacity>
   );
@@ -72,5 +69,10 @@ const styles = StyleSheet.create({
     height: 40,
     marginTop: 20,
     marginBottom: 60,
+  },
+  imageContainer: {
+    width: 70,
+    height: 70,
+    resizeMode: 'contain',
   },
 });
