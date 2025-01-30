@@ -19,6 +19,7 @@ const adUnitIdBanner = __DEV__
 
 export const HomeScreen = () => {
   const [isPlayerReady, setIsPlayerReady] = useState<boolean>(false);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   useEffect(() => {
     SplashScreen.hide();
@@ -31,6 +32,7 @@ export const HomeScreen = () => {
 
       if (isSetup) {
         TrackPlayer.play();
+        setIsPlaying(true);
       }
 
       const queue = await TrackPlayer.getQueue();
@@ -99,6 +101,8 @@ export const HomeScreen = () => {
                 description: 'play/pause Radio',
               });
             }}
+            isPlaying={isPlaying}
+            setIsPlaying={setIsPlaying}
           />
         </View>
       </LinearGradient>
