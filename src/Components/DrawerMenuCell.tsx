@@ -48,19 +48,19 @@ export const DrawerMenuCell = ({
     interstitial.load();
   };
 
-  const showAds = () => {
-    if (!loaded) {
-      console.log('no loaded ad [null]');
-      return null;
-    }
-    interstitial.show();
-  };
+  // const showAds = () => {
+  //   if (!loaded) {
+  //     console.log('no loaded ad [null]');
+  //     return null;
+  //   }
+  //   interstitial.show();
+  // };
   return (
     <TouchableOpacity
       style={{paddingVertical: 20}}
       onPress={() => {
         if (screenName === 'LoopGameScreen') {
-          showAds();
+          // showAds();
         }
         navProps.navigate(screenName);
       }}>
