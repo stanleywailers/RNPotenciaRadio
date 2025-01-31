@@ -545,16 +545,16 @@ PODS:
     - React-perflogger (= 0.72.17)
   - RNDeviceInfo (10.14.0):
     - React-Core
-  - RNFBAnalytics (15.7.1):
+  - RNFBAnalytics (21.7.1):
     - Firebase/Analytics (= 11.7.0)
     - React-Core
     - RNFBApp
   - RNFBApp (21.7.1):
     - Firebase/CoreOnly (= 11.7.0)
     - React-Core
-  - RNFBMessaging (15.7.1):
+  - RNFBMessaging (21.7.1):
     - Firebase/Messaging (= 11.7.0)
-    - FirebaseCoreExtension (= 11.7.0)
+    - FirebaseCoreExtension
     - React-Core
     - RNFBApp
   - RNGestureHandler (2.16.0):
@@ -821,9 +821,9 @@ SPEC CHECKSUMS:
   React-utils: 8929de4af0803247c15f8f38ec8ae5623b46f4d2
   ReactCommon: 7200e4235574a3c304acbd9eeac17f5f45dfd9db
   RNDeviceInfo: 59344c19152c4b2b32283005f9737c5c64b42fba
-  RNFBAnalytics: 8317aa2cb8580cd5d10618b639a55b953a713f04
+  RNFBAnalytics: db74fdddc25c9aeb509a0b9bb912c1c3f114e453
   RNFBApp: e0a2811ca35292b19d390e327612ada2bd115d0a
-  RNFBMessaging: 8f07cc82fcb54dac59378481801bb4a56010c963
+  RNFBMessaging: 3b4b92c33a2ad87105c5b6e2e7a3bb5d33a34320
   RNGestureHandler: b24778ccfe2ee0fb1fe50e12e90e0d8edb1bf475
   RNGoogleMobileAds: 0a94d46e2bad2627d6da2796ff27b037872cc2bf
   RNReanimated: 0dcb26659d0a2d34731f84c4c5586ed036e50695
