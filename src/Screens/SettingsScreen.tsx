@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Text, View} from 'react-native';
 import {BannerAd, BannerAdSize, TestIds} from 'react-native-google-mobile-ads';
 import {getVersion} from 'react-native-device-info';
@@ -10,6 +10,9 @@ const adUnitIdBanner = __DEV__
   : 'ca-app-pub-8582719280960685/3307949149';
 
 export const SettingsScreen = () => {
+  useEffect(() => {
+    console.log('settings');
+  }, []);
   return (
     <View style={{flex: 1, backgroundColor: '#FFF'}}>
       <ButtonSetting

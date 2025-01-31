@@ -10,7 +10,7 @@ import {AdsScreen} from '../Screens/AdsScreen';
 import {Image, Text, TouchableOpacity, View} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {DrawerMenuCell} from '../Components/DrawerMenuCell';
-import {NewsScreen} from '../Screens/NewsScreen';
+import {NewsScreen} from '../Screens/NewsScreen/NewsScreen';
 import {SettingsScreen} from '../Screens/SettingsScreen';
 import {DrawerActions, useNavigation} from '@react-navigation/native';
 import {LoopGameScreen} from '../Screens/LoopGameScreen';
@@ -40,6 +40,11 @@ export const CustomDrawer = ({}) => {
         name="HomeScreen"
         component={HomeScreen}
       />
+      {/* <Drawer.Screen
+        options={() => ({title: 'Noticias'})}
+        name="NewsScreen"
+        component={NewsScreen}
+      /> */}
       <Drawer.Screen
         options={() => ({title: 'Snake Game'})}
         name="LoopGameScreen"
@@ -65,6 +70,12 @@ const SideMenu = ({navigation}: DrawerContentComponentProps) => {
           navProps={navigation}
           screenName="HomeScreen"
         />
+        {/* <DrawerMenuCell
+          iconName="newspaper-outline"
+          name="Noticias"
+          navProps={navigation}
+          screenName="NewsScreen"
+        /> */}
         <DrawerMenuCell
           iconName="game-controller-outline"
           name="Jugar"
