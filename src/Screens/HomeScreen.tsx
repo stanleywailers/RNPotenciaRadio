@@ -27,7 +27,8 @@ export const HomeScreen = () => {
   const [isPlayerReady, setIsPlayerReady] = useState<boolean>(false);
   const width = Dimensions.get('window').width;
   const [sliders, setSliders] = useState<Slider[]>([]);
-  console.log(sliders);
+
+  const [isPlaying, setIsPlaying] = useState(false);
 
   useEffect(() => {
     SplashScreen.hide();
@@ -54,18 +55,18 @@ export const HomeScreen = () => {
   }, []);
 
   useEffect(() => {
-    // async function run() {
-    //   const isSetup = await SetupServicePlayer();
-    //   setIsPlayerReady(isSetup);
-    //   if (isSetup) {
-    //     TrackPlayer.play();
-    //   }
-    //   const queue = await TrackPlayer.getQueue();
-    //   if (isSetup && queue.length <= 0) {
-    //     await QueueInitalTracksService();
-    //   }
-    // }
-    // run();
+    async function run() {
+      const isSetup = await SetupServicePlayer();
+      setIsPlayerReady(isSetup);
+      if (isSetup) {
+        TrackPlayer.play();
+      }
+      const queue = await TrackPlayer.getQueue();
+      if (isSetup && queue.length <= 0) {
+        await QueueInitalTracksService();
+      }
+    }
+    run();
   }, []);
 
   // Muestra el FCM token en consola.
@@ -136,6 +137,8 @@ export const HomeScreen = () => {
                 description: 'play/pause Radio',
               });
             }}
+            isPlaying={isPlaying}
+            setIsPlaying={setIsPlaying}
           />
         </View>
       </LinearGradient>
