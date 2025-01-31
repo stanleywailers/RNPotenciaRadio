@@ -4,23 +4,20 @@ import firestore from '@react-native-firebase/firestore';
 
 export const NewsScreen = () => {
   const [news, setNews] = useState([]);
-  console.log(news, 'noticias');
 
   useEffect(() => {
-    const fetchNews = async () => {
-      try {
-        const snapshot = await firestore().collection('news').get();
+    const unsubscribe = firestore()
+      .collection('news')
+      .onSnapshot(snapshot => {
         const newsList = snapshot.docs.map(doc => ({
           id: doc.id,
           ...doc.data(),
         }));
         setNews(newsList);
-      } catch (error) {
-        console.error('Error fetching news:', error);
-      }
-    };
+      });
 
-    fetchNews();
+    // Cleanup al desmontar
+    return () => unsubscribe();
   }, []);
 
   useEffect(() => {

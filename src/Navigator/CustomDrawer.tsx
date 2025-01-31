@@ -40,11 +40,11 @@ export const CustomDrawer = ({}) => {
         name="HomeScreen"
         component={HomeScreen}
       />
-      <Drawer.Screen
+      {/* <Drawer.Screen
         options={() => ({title: 'Noticias'})}
         name="NewsScreen"
         component={NewsScreen}
-      />
+      /> */}
       <Drawer.Screen
         options={() => ({title: 'Snake Game'})}
         name="LoopGameScreen"
@@ -70,12 +70,12 @@ const SideMenu = ({navigation}: DrawerContentComponentProps) => {
           navProps={navigation}
           screenName="HomeScreen"
         />
-        <DrawerMenuCell
-          iconName="game-controller-outline"
+        {/* <DrawerMenuCell
+          iconName="newspaper-outline"
           name="Noticias"
           navProps={navigation}
           screenName="NewsScreen"
-        />
+        /> */}
         <DrawerMenuCell
           iconName="game-controller-outline"
           name="Jugar"
