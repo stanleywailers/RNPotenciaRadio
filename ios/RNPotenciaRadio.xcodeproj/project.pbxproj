@@ -13,8 +13,8 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2BC94EFF09F1E5050EF511C1 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 1E77DE0C51CBD1A8B88B12E1 /* PrivacyInfo.xcprivacy */; };
 		4BAE759A863FE4955643CBC6 /* Pods_RNPotenciaRadio_RNPotenciaRadioTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21CEA0CB5EF0427769B0CD7D /* Pods_RNPotenciaRadio_RNPotenciaRadioTests.framework */; };
+		5796F0DF2D4D9CAA0050E38C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5796F0DE2D4D9CAA0050E38C /* LaunchScreen.storyboard */; };
 		57E96B412D4D4D0F004BB7C6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 57E96B402D4D4D0F004BB7C6 /* GoogleService-Info.plist */; };
-		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		ADCEF1FDAE57B09E80F4E61A /* Pods_RNPotenciaRadio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C00AF95282F24EA35625D405 /* Pods_RNPotenciaRadio.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,9 +42,9 @@
 		21CEA0CB5EF0427769B0CD7D /* Pods_RNPotenciaRadio_RNPotenciaRadioTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RNPotenciaRadio_RNPotenciaRadioTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B4392A12AC88292D35C810B /* Pods-RNPotenciaRadio.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNPotenciaRadio.debug.xcconfig"; path = "Target Support Files/Pods-RNPotenciaRadio/Pods-RNPotenciaRadio.debug.xcconfig"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-RNPotenciaRadio.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNPotenciaRadio.release.xcconfig"; path = "Target Support Files/Pods-RNPotenciaRadio/Pods-RNPotenciaRadio.release.xcconfig"; sourceTree = "<group>"; };
+		5796F0DE2D4D9CAA0050E38C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = RNPotenciaRadio/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		57E96B402D4D4D0F004BB7C6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-RNPotenciaRadio-RNPotenciaRadioTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNPotenciaRadio-RNPotenciaRadioTests.debug.xcconfig"; path = "Target Support Files/Pods-RNPotenciaRadio-RNPotenciaRadioTests/Pods-RNPotenciaRadio-RNPotenciaRadioTests.debug.xcconfig"; sourceTree = "<group>"; };
-		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = RNPotenciaRadio/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-RNPotenciaRadio-RNPotenciaRadioTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNPotenciaRadio-RNPotenciaRadioTests.release.xcconfig"; path = "Target Support Files/Pods-RNPotenciaRadio-RNPotenciaRadioTests/Pods-RNPotenciaRadio-RNPotenciaRadioTests.release.xcconfig"; sourceTree = "<group>"; };
 		C00AF95282F24EA35625D405 /* Pods_RNPotenciaRadio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RNPotenciaRadio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
@@ -90,11 +90,11 @@
 		13B07FAE1A68108700A75B9A /* RNPotenciaRadio */ = {
 			isa = PBXGroup;
 			children = (
+				5796F0DE2D4D9CAA0050E38C /* LaunchScreen.storyboard */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
-				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
 				1E77DE0C51CBD1A8B88B12E1 /* PrivacyInfo.xcprivacy */,
 			);
@@ -250,8 +250,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				57E96B412D4D4D0F004BB7C6 /* GoogleService-Info.plist in Resources */,
+				5796F0DF2D4D9CAA0050E38C /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				2BC94EFF09F1E5050EF511C1 /* PrivacyInfo.xcprivacy in Resources */,
 			);
@@ -520,6 +520,7 @@
 			baseConfigurationReference = 3B4392A12AC88292D35C810B /* Pods-RNPotenciaRadio.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
@@ -528,7 +529,7 @@
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = MUDSH82QCF;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = RNPotenciaRadio/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = PotenciaRadio;
+				INFOPLIST_KEY_CFBundleDisplayName = "Potencia Radio";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -555,6 +556,7 @@
 			baseConfigurationReference = 5709B34CF0A7D63546082F79 /* Pods-RNPotenciaRadio.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
@@ -562,7 +564,7 @@
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = MUDSH82QCF;
 				INFOPLIST_FILE = RNPotenciaRadio/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = PotenciaRadio;
+				INFOPLIST_KEY_CFBundleDisplayName = "Potencia Radio";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -660,10 +662,7 @@
 					"-DFOLLY_MOBILE=1",
 					"-DFOLLY_USE_LIBCPP=1",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 			};
@@ -741,10 +740,7 @@
 					"-DFOLLY_MOBILE=1",
 					"-DFOLLY_USE_LIBCPP=1",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
